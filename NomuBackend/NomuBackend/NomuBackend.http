@@ -1,0 +1,6 @@
+@NomuBackend_HostAddress = http://localhost:5023
+
+GET {{NomuBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
