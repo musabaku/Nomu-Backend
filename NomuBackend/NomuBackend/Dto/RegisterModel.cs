@@ -1,19 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace NomuBackend.Model
+namespace NomuBackend.Dto
 {
-    public class User
+    public class RegisterModel
     {
-
         [Required]
-        public string Name { get; set; }
-
-        [Required]
-        [EmailAddress(ErrorMessage = "Invalid Email")]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
+        [MinLength(6)]
         public string Password { get; set; }
     }
 }
 
+    

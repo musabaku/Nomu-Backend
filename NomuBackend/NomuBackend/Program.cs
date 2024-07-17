@@ -1,5 +1,5 @@
-using Nomu.Model;
-using Nomu.Settings;
+using NomuBackend.Model;
+using NomuBackend.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 var mongoDbSettings = builder.Configuration.GetSection(nameof(MongoDbConfig)).Get<MongoDbConfig>();
@@ -11,7 +11,6 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -24,8 +23,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
+/*app.UseHttpsRedirection();
+*/
 app.UseAuthorization();
 
 app.MapControllers();
